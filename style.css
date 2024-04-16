@@ -1,0 +1,93 @@
+body {
+    background-color: mediumpurple;
+}
+
+.square {
+    width: 4rem;
+    height: 4rem;
+    background-color: white;
+    opacity: .6;
+}
+
+.square1 {
+    animation-name: move1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move1 {
+  /* from */
+  0% {
+  }
+
+  /* to */
+  100% {
+    transform: translateX(calc(100vw - 100% - 16px));
+  }
+}
+
+.square2 {
+    animation-name: move2;
+    animation-duration: 1s; /* 1s */
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move2 {
+  /* to */
+  100% {
+    transform: translateX(calc(100vw - 100% - 16px));
+  }
+}
+
+.square3 {
+    animation-name: move3;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes move3 {
+  /* to */
+  100% {
+    transform: translateX(calc(100vw - 100% - 16px));
+  }
+}
+
+.square4 {
+    animation-name: move4, blink;
+    animation-duration: 1s, 200ms;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    /* animation-delay: 2s; */
+    animation-timing-function: steps(10);
+
+    /*shorthand*/
+    /* animation: move 1s forwards alternate infinite, blink 100ms infinite; */
+  }
+  
+  .square:hover {
+    animation-play-state: paused;
+  }
+  
+  @keyframes move4 {
+    /* to */
+    100% {
+      transform: translateX(calc(100vw - 100% - 16px));
+    }
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 0.6;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
